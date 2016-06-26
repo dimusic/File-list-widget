@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>File list widget</title>
+        <style>
+            .file-list-widget{
+                width: 800px;
+                max-width: 800px;
+                table-layout: fixed;
+                white-space: nowrap;
+                margin: 0 auto 25px;
+                border: 1px solid #eee;
+                border-bottom: 2px solid #007B0A;
+                border-collapse: collapse;
+                box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+                    0px 10px 20px rgba(0,0,0,0.05),
+                    0px 20px 20px rgba(0,0,0,0.05),
+                    0px 30px 20px rgba(0,0,0,0.05);
+            }
+
+            .file-list-widget tbody:empty{
+                display: block;
+                height: 20px;
+            }
+            
+            .file-list-widget .column-header-name{
+                width: 60%;
+            }
+            .file-list-widget .column-header-size{
+                width: 15%;
+            }
+            .file-list-widget .column-header-dateModified{
+                width: 25%;
+            }
+
+            .file-list-widget td{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: center;
+            }
+            .file-list-widget .column-name{
+                text-align: left;
+            }
+
+            .file-list-widget tr:hover{
+                background: #f4f4f4;
+            }
+            .file-list-widget tr:hover td{
+                color: #555;
+            }
+            .file-list-widget td,
+            .file-list-widget th{
+                color: #999;
+                border: 1px solid #eee;
+                padding: 10px;
+                border-collapse: collapse;
+            }
+            .file-list-widget th{
+                cursor: pointer;
+                background: #4aa848;
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+            .file-list-widget th:last-of-type{
+                border-right: none;
+            }
+            .file-list-widget tfoot{
+                text-align: left;
+            }
+            .file-list-widget tfoot th{
+                cursor: default;
+            }
+
+            .file-list-widget th.sort-up:after{
+                content: '';
+                float: right;
+                margin-top: 7px;
+                border-style: solid;
+                border-color: #404040 transparent;
+                border-width: 4px 4px 0;
+            }
+
+            .file-list-widget th.sort-down:after{
+                content: '';
+                float: right;
+                margin-top: 7px;
+                border-style: solid;
+                border-color: #404040 transparent;
+                border-width: 0 4px 4px;
+            }
+
+            /**
+             * File input button
+             */
+            .file-input-btn {
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+            .file-input-btn + label {
+                display: inline-block;
+                color: #05E9EA;
+            }
+
+            .file-input-btn:focus + label,
+            .file-input-btn + label:hover {
+                color: #7FF0F1;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="./js/build.js"></script>
+    </body>
+</html>
